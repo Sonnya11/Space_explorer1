@@ -1,4 +1,4 @@
-Django Login/Signup App
+Space_Explorer https://space-explorer1-1.onrender.com/
 
 This is a beginner-friendly Django project where users can sign up and log in.
 The project uses Django’s default SQLite database, and it is also configured for Render Deployment (free cloud hosting).
