@@ -19,7 +19,9 @@ def signup(request):
 
         # add new user
         users.append({"username": username, "password": password})
-        return HttpResponse("✅ Signup successful!")
+
+        # ✅ after signup → open welcome page with button
+        return render(request, "accounts/home.html", {"username": username})
 
     return HttpResponse("Method not allowed")
 
@@ -30,7 +32,8 @@ def login(request):
 
         for u in users:
             if u["username"] == username and u["password"] == password:
-                return HttpResponse("🎉 Login successful!")
+                # ✅ after login → open welcome page with button
+                return render(request, "accounts/home.html", {"username": username})
 
         return HttpResponse("❌ Invalid username or password!")
 

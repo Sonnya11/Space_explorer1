@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latest Space News 🚀</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+        h1 { text-align: center; }
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 600px;
+        }
+        img { max-width: 100%; border-radius: 10px; }
+        h2 { margin: 10px 0; }
+        a { text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Latest Space News</h1>
+
+    {% for news in news_list %}
+        <div class="news-card">
+            <img src="{{ news.image_url }}" alt="News Image">
+            <h2>{{ news.title }}</h2>
+            <p>{{ news.summary|truncatechars:200 }}</p>
+            <a href="{{ news.url }}" target="_blank">Read more</a>
+        </div>
+    {% empty %}
+        <p>No news available right now.</p>
+    {% endfor %}
+</body>
+</html>
